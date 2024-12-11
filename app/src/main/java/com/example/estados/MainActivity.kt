@@ -124,12 +124,10 @@ class MainActivity : AppCompatActivity(), OnClickListener {
     }
 
     private fun chooseOp(newOp: Ops) {
-        if (op == Ops.AC || (mod == 0.0 && !modIsSetToZeroByUser)) {
-            op = newOp
-        } else {
+        if (!(op == Ops.AC || (mod == 0.0 && !modIsSetToZeroByUser))) {
             applyState()
-            op = newOp
         }
+        op = newOp
     }
 
     override fun onSaveInstanceState(outState: Bundle) {
